@@ -112,6 +112,10 @@
                         <input type="text" class="form-control" id="title" placeholder="Default: 'Protected Page'">
                     </div>
                     <div class="form-group">
+                        <label for="subtitle">Page sub title</label>
+                        <input type="text" class="form-control" id="subtitle" placeholder="Default: 'Protected Page'">
+                    </div>
+                    <div class="form-group">
                         <label for="instructions">Instructions to display the user</label>
                         <textarea class="form-control" id="instructions" placeholder="Default: nothing."></textarea>
                     </div>
@@ -244,10 +248,12 @@ Filename changed to circumvent adblockers that mistake it for a crypto miner (se
         var encryptedMsg = hmac + encrypted;
 
         var pageTitle = document.getElementById('title').value.trim();
+        var subpageTitle = document.getElementById('subtitle').value.trim();
         var instructions = document.getElementById('instructions').value;
         var data = {
             title: pageTitle ? pageTitle : 'Protected Page',
             instructions: instructions ? instructions : '',
+            subtitle: subtitle ? subtitle : '',
             encrypted: encryptedMsg,
             crypto_tag: '<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js" integrity="sha384-lp4k1VRKPU9eBnPePjnJ9M2RF3i7PC30gXs70+elCVfgwLwx1tv5+ctxdtwxqZa7" crossorigin="anonymous"></scr' + 'ipt>'
         };
